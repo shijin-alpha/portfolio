@@ -48,12 +48,25 @@ npm run preview
 
 ## 🚀 Deployment
 
-This project is optimized for deployment on Render:
+This project is optimized for deployment on Render with multiple configuration options:
 
+### Option 1: Automatic (render.yaml)
+The repository includes a `render.yaml` file for automatic deployment:
 1. Connect your GitHub repository to Render
-2. Set the build command: `npm run build`
-3. Set the publish directory: `dist`
-4. Deploy!
+2. Render will automatically detect and use the configuration
+3. Build command: `chmod +x build.sh && ./build.sh`
+4. Publish directory: `dist`
+
+### Option 2: Manual Configuration
+1. Create a new Static Site on Render
+2. Connect your GitHub repository
+3. Set build command: `npm install && npx vite build`
+4. Set publish directory: `dist`
+
+### Option 3: Simple Configuration
+Use the `render-simple.yaml` file if you prefer a simpler setup without the build script.
+
+**Note:** The build uses `npx vite build` to avoid permission issues on deployment platforms.
 
 ## 📁 Project Structure
 
